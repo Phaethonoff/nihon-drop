@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIHON DROP — префектуры Японии</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .reference-button{width:100%;margin-top:19px;border:1px solid #ffffff25;background:#ffffff09;color:white;padding:11px 12px;display:flex;align-items:center;gap:10px;cursor:pointer;text-align:left}.reference-button:hover{border-color:var(--gold);color:var(--gold)}.reference-button span{font-family:"Noto Sans JP";font-size:16px;color:var(--gold)}.reference-button b{font-size:8px;letter-spacing:.13em}
+    .reference-backdrop{position:fixed;z-index:38;inset:72px 0 0;background:#08101c99;opacity:0;pointer-events:none;transition:opacity .3s}.reference-backdrop.open{opacity:1;pointer-events:auto}.reference-drawer{position:fixed;z-index:40;right:0;top:72px;bottom:0;width:min(520px,92vw);background:#f8f6f0;box-shadow:-24px 0 70px #0a152850;transform:translateX(105%);transition:transform .35s cubic-bezier(.2,.8,.2,1);padding:25px;display:flex;flex-direction:column}.reference-drawer.open{transform:translateX(0)}.reference-head{display:flex;align-items:flex-start;justify-content:space-between}.reference-head small{font-size:8px;letter-spacing:.17em;color:var(--red);font-weight:800}.reference-head h3{margin:5px 0 20px;font-size:24px}.reference-head button{border:0;background:#111722;color:white;width:36px;height:36px;font-size:21px;cursor:pointer}.reference-image-wrap{background:#e8f1f3;border:1px solid #d4dcdd;padding:9px;overflow:auto}.reference-image-wrap img{display:block;width:100%;height:auto}.reference-drawer>p{font-size:11px;color:#74777b;line-height:1.6;margin:16px 0 0}
+    .prefecture-shape.assisted{fill:var(--gold);stroke:#9f7014;animation:pulse-answer .55s ease-in-out 1}
+    .quiz-exit{position:absolute;z-index:12;left:22px;top:88px;border:1px solid #17243b22;background:#fff;color:#17243b;padding:10px 14px;font-size:9px;font-weight:800;letter-spacing:.11em;box-shadow:0 7px 20px #20364b20;cursor:pointer}.quiz-exit:hover{background:#17243b;color:#fff}@media(max-width:900px){.quiz-exit{top:78px;left:10px;padding:8px 10px}.quiz-exit span{display:none}}
+    /* Motion system */
+    .screen.active{animation:screen-in .55s cubic-bezier(.2,.8,.2,1) both}.topbar{animation:header-drop .55s cubic-bezier(.2,.8,.2,1) both}.brand>span{animation:brand-breathe 4s ease-in-out infinite}.home-glow{animation:glow-drift 7s ease-in-out infinite alternate}.home-grid,.quiz-bg{animation:grid-drift 22s linear infinite}.home-copy>*{opacity:0;animation:rise-in .65s cubic-bezier(.2,.8,.2,1) forwards}.home-copy>*:nth-child(1){animation-delay:.08s}.home-copy>*:nth-child(2){animation-delay:.16s}.home-copy>*:nth-child(3){animation-delay:.24s}.home-copy>*:nth-child(4){animation-delay:.32s}.home-symbol{animation:symbol-float 6s ease-in-out infinite}.primary,.lang-button,.back,.quiz-exit,.reference-button,.link-button,.reference-head button{transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease,border-color .2s ease}.primary:hover{transform:translate(-2px,-3px);box-shadow:9px 10px 0 var(--ink)}.primary:active,.lang-button:active,.back:active,.quiz-exit:active,.reference-button:active{transform:scale(.96)}.primary i{display:inline-block;transition:transform .25s ease}.primary:hover i{transform:translateX(5px)}.region-heading{animation:rise-in .55s .08s both}.region-card{opacity:0;animation:card-in .48s cubic-bezier(.2,.8,.2,1) forwards}.region-card:nth-child(1){animation-delay:.08s}.region-card:nth-child(2){animation-delay:.12s}.region-card:nth-child(3){animation-delay:.16s}.region-card:nth-child(4){animation-delay:.20s}.region-card:nth-child(5){animation-delay:.24s}.region-card:nth-child(6){animation-delay:.28s}.region-card:nth-child(7){animation-delay:.32s}.region-card:nth-child(8){animation-delay:.36s}.region-card:nth-child(9){animation-delay:.40s}.question-card{animation:card-in .55s .08s both}.map-card{animation:map-arrive .65s cubic-bezier(.2,.8,.2,1) both}.prefecture-shape:not(.disabled){animation:map-piece-in .4s ease both;transform-box:fill-box;transform-origin:center}.prefecture-shape:nth-child(3n){animation-delay:.04s}.prefecture-shape:nth-child(3n+1){animation-delay:.08s}.prefecture-shape:nth-child(3n+2){animation-delay:.12s}.prefecture-shape:hover{transform:translateY(-1px) scale(1.025)}.question-card.question-enter h2,.question-card.question-enter .target-jp{animation:question-swap .42s cubic-bezier(.2,.8,.2,1) both}.game-stats.stat-bump b{animation:stat-pop .3s ease}.attempt-dots i{animation:dot-in .25s ease both}.attempt-dots i:nth-child(2){animation-delay:.04s}.attempt-dots i:nth-child(3){animation-delay:.08s}.attempt-dots i:nth-child(4){animation-delay:.12s}.attempt-dots i:nth-child(5){animation-delay:.16s}.attempt-dots i.used{animation:dot-error .35s ease both}.prefecture-shape.correct{animation:correct-pop .65s cubic-bezier(.2,.8,.2,1) both}.prefecture-shape.assisted{animation:assisted-pop .65s cubic-bezier(.2,.8,.2,1) both}.prefecture-shape.wrong{animation:wrong-flash .42s ease both}.reference-drawer.open .reference-head,.reference-drawer.open .reference-image-wrap,.reference-drawer.open>p{animation:drawer-content .45s .12s both}.reference-drawer.open .reference-image-wrap{animation-delay:.18s}.reference-drawer.open>p{animation-delay:.24s}.reference-image-wrap img{transition:transform .5s ease}.reference-image-wrap:hover img{transform:scale(1.025)}.finish-card{animation:finish-card-in .7s cubic-bezier(.2,.8,.2,1) both}.finish-score{animation:score-reveal .7s .25s cubic-bezier(.2,.8,.2,1) both}.finish-details>div{opacity:0;animation:rise-in .45s forwards}.finish-details>div:nth-child(1){animation-delay:.38s}.finish-details>div:nth-child(2){animation-delay:.46s}.finish-details>div:nth-child(3){animation-delay:.54s}
+    @keyframes screen-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@keyframes header-drop{from{transform:translateY(-100%)}to{transform:none}}@keyframes rise-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}@keyframes card-in{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}@keyframes map-arrive{from{opacity:0;transform:translateX(25px) scale(.98)}to{opacity:1;transform:none}}@keyframes map-piece-in{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}@keyframes glow-drift{from{transform:translate(-12px,-8px) scale(.97)}to{transform:translate(18px,14px) scale(1.04)}}@keyframes grid-drift{to{background-position:42px 42px}}@keyframes symbol-float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(1deg)}}@keyframes brand-breathe{0%,100%{box-shadow:0 0 0 0 #ed403500}50%{box-shadow:0 0 0 7px #ed403520}}@keyframes question-swap{from{opacity:0;transform:translateX(-16px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}@keyframes stat-pop{50%{transform:translateY(-2px) scale(1.12);color:var(--gold)}}@keyframes dot-in{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}@keyframes dot-error{50%{transform:scale(1.35);box-shadow:0 0 0 6px #ed403522}}@keyframes correct-pop{35%{transform:scale(1.12);filter:drop-shadow(0 0 10px #27a56b)}100%{fill:var(--green)}}@keyframes assisted-pop{35%{transform:scale(1.12);filter:drop-shadow(0 0 11px #f2bd3d)}100%{fill:var(--gold)}}@keyframes wrong-flash{45%{transform:scale(1.08);filter:drop-shadow(0 0 8px #ed4035)}}@keyframes drawer-content{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}@keyframes finish-card-in{from{opacity:0;transform:translateY(30px) scale(.94);filter:blur(7px)}to{opacity:1;transform:none;filter:none}}@keyframes score-reveal{from{opacity:0;transform:scale(.72)}to{opacity:1;transform:scale(1)}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+    .map-card svg{touch-action:none;user-select:none}.map-card svg.can-pan{cursor:grab}.map-card svg.is-panning{cursor:grabbing}.zoom-controls{position:absolute;z-index:8;right:13px;top:13px;display:flex;flex-direction:column;gap:5px}.zoom-controls button{width:36px;height:36px;border:1px solid #17314920;background:#fff;color:#17243b;font-size:19px;font-weight:800;box-shadow:0 5px 15px #17314920;cursor:pointer;transition:transform .18s ease,background .18s ease,color .18s ease}.zoom-controls button:hover{background:#17243b;color:#fff;transform:translateX(-2px)}.zoom-controls button:active{transform:scale(.92)}.drag-hint{position:absolute;z-index:7;left:12px;bottom:12px;background:#102035d9;color:#fff;padding:7px 10px;font-size:7px;font-weight:800;letter-spacing:.14em;opacity:0;transform:translateY(5px);transition:.25s;pointer-events:none}.drag-hint.visible{opacity:1;transform:none}@media(max-width:600px){.zoom-controls{right:7px;top:7px}.zoom-controls button{width:32px;height:32px}.drag-hint{display:none}}
+    .brand-new{gap:11px}.brand-new>span{width:auto;height:auto;border-radius:0;display:block;background:none;animation:none}.brand-icon{width:42px;height:42px;padding:5px;border-radius:12px;background:#202b3d;box-shadow:inset 0 0 0 1px #ffffff12;overflow:visible;transition:transform .25s ease,background .25s ease}.brand-icon circle:first-child{fill:var(--red)}.brand-icon path,.brand-icon circle:last-child{fill:#f8f6f0}.brand-new:hover .brand-icon{transform:rotate(-5deg) scale(1.06);background:#29364a}.brand-word{display:grid!important;grid-template-columns:auto auto;align-items:end;column-gap:5px;text-align:left}.brand-word b{font-size:14px;line-height:1;letter-spacing:.14em}.brand-word em{font-size:14px;line-height:1;color:var(--red);font-style:normal;font-weight:800;letter-spacing:.08em}.brand-word small{grid-column:1/-1;margin-top:4px;font-family:"Noto Sans JP";font-size:7px;color:#9ba6b7;letter-spacing:.28em}@media(max-width:600px){.brand-word{display:none!important}.brand-icon{width:40px;height:40px}}
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand brand-new" id="homeButton" aria-label="NIHON DROP">
+        <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="43" cy="20" r="10"/><path d="M19 10l5 4-2 7 5 4-4 5 5 5-3 5 5 5-3 8-8 2-3-5 3-6-5-5 4-5-4-5 4-5-3-6z"/><circle cx="12" cy="52" r="2.6"/></svg>
+        <span class="brand-word"><b>NIHON</b><em>DROP</em><small>日本地図</small></span>
+      </button>
+      <div class="game-stats" id="gameStats">
+        <div><small id="progressLabel">ПРОГРЕСС</small><b id="progressValue">0 / 47</b></div>
+        <div><small id="accuracyLabel">ТОЧНОСТЬ</small><b id="accuracyValue">100%</b></div>
+        <div><small id="mistakesLabel">ОШИБКИ</small><b id="mistakesValue">0 / 5</b></div>
+      </div>
+      <button class="lang-button" id="langButton">EN</button>
+    </header>
+
+    <main>
+      <section class="screen home-screen active" id="homeScreen">
+        <div class="home-glow"></div>
+        <div class="home-grid"></div>
+        <div class="home-copy">
+          <div class="kicker" id="homeKicker">47 ПРЕФЕКТУР · ОДНА КАРТА</div>
+          <h1 id="homeTitle">Знаешь ли ты<br><span>Японию?</span></h1>
+          <p id="homeText">Получай название префектуры и находи её на карте по памяти. Пять ошибок — и карта покажет правильный ответ.</p>
+          <button class="primary" id="startButton"><span id="startText">ВЫБРАТЬ РЕГИОН</span><i>→</i></button>
+        </div>
+        <div class="home-symbol" aria-hidden="true">県</div>
+      </section>
+
+      <section class="screen region-screen" id="regionScreen">
+        <button class="back" id="backButton">← НАЗАД</button>
+        <div class="region-heading">
+          <div class="kicker" id="regionKicker">РЕЖИМ ИГРЫ</div>
+          <h2 id="regionTitle">Выбери <span>регион</span></h2>
+          <p id="regionText">Названия крупно на выбранном языке, японское название — снизу.</p>
+        </div>
+        <div class="region-grid" id="regionGrid"></div>
+      </section>
+
+      <section class="screen quiz-screen" id="quizScreen">
+        <div class="quiz-bg"></div>
+        <button class="quiz-exit" id="quizExitButton">← <span id="quizExitText">НАЗАД К РЕГИОНАМ</span></button>
+        <div class="quiz-layout">
+          <div class="question-card">
+            <small id="instructionLabel">НАЙДИ НА КАРТЕ</small>
+            <h2 id="targetName">Коти</h2>
+            <div class="target-jp" id="targetJapanese">高知県</div>
+            <div class="attempt-dots" id="attemptDots" aria-label="Оставшиеся попытки"></div>
+            <p id="feedbackText">Нажми на нужную префектуру</p>
+            <button class="reference-button" id="referenceButton"><span>地図</span><b id="referenceButtonText">КАРТА С НАЗВАНИЯМИ</b></button>
+          </div>
+          <div class="map-card">
+            <svg id="japanMap" viewBox="0 0 438 516" role="img" aria-label="Карта префектур Японии"></svg>
+            <div class="zoom-controls" aria-label="Управление масштабом"><button id="zoomInButton" aria-label="Приблизить">+</button><button id="zoomOutButton" aria-label="Отдалить">−</button><button id="zoomResetButton" aria-label="Показать выбранный регион">⌗</button></div>
+            <div class="drag-hint" id="dragHint">ПЕРЕТАСКИВАЙ КАРТУ</div>
+            <div class="map-credit">Map: @svg-maps/japan · CC BY 4.0</div>
+          </div>
+        </div>
+        <div class="reference-backdrop" id="referenceBackdrop"></div>
+        <aside class="reference-drawer" id="referenceDrawer" aria-hidden="true">
+          <div class="reference-head"><div><small id="referenceKicker">СПРАВОЧНАЯ КАРТА</small><h3 id="referenceTitle">Регионы и префектуры</h3></div><button id="referenceClose" aria-label="Закрыть">×</button></div>
+          <div class="reference-image-wrap"><img src="japan-reference.png" alt="Карта регионов и префектур Японии"></div>
+          <p id="referenceNote">Используй как подсказку и закрой, когда будешь готов продолжить.</p>
+        </aside>
+      </section>
+
+      <section class="screen finish-screen" id="finishScreen">
+        <div class="finish-card">
+          <div class="kicker" id="finishKicker">ТРЕНИРОВКА ЗАВЕРШЕНА</div>
+          <h2 id="finishTitle">Отличная работа</h2>
+          <div class="finish-score" id="finishScore">42 / 47</div>
+          <p id="finishText">Префектур найдено без подсказки</p>
+          <div class="finish-details">
+            <div><small id="finalAccuracyLabel">ТОЧНОСТЬ</small><b id="finalAccuracy">89%</b></div>
+            <div><small id="finalClicksLabel">ВСЕГО КЛИКОВ</small><b id="finalClicks">55</b></div>
+            <div><small id="finalRegionLabel">РЕГИОН</small><b id="finalRegion">日本全国</b></div>
+          </div>
+          <button class="primary" id="replayButton"><span id="replayText">СЫГРАТЬ ЕЩЁ РАЗ</span><i>↻</i></button>
+          <button class="link-button" id="changeRegionButton">Сменить регион</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="map-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
