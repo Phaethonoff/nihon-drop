@@ -5,7 +5,7 @@ Small improvements, bug fixes, translation corrections, and accessibility enhanc
 ## Local Setup
 
 ```bash
-git clone https://github.com/ASSIGNITER/nihon-drop.git
+git clone https://github.com/Phaethonoff/nihon-drop.git
 cd nihon-drop
 python -m http.server 8000
 ```

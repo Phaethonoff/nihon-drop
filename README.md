@@ -3,14 +3,14 @@
   <h1>NIHON DROP</h1>
   <p><strong>Interactive bilingual quiz for learning the 47 prefectures of Japan by location.</strong></p>
 
-  [![Live Demo](https://img.shields.io/badge/Live_Demo-Play_now-ed4035?style=for-the-badge)](https://assigniter.github.io/nihon-drop/)
-  [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-111722?style=for-the-badge&logo=github)](https://assigniter.github.io/nihon-drop/)
+  [![Live Demo](https://img.shields.io/badge/Live_Demo-Play_now-ed4035?style=for-the-badge)](https://phaethonoff.github.io/nihon-drop/)
+  [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-111722?style=for-the-badge&logo=github)](https://phaethonoff.github.io/nihon-drop/)
   [![Languages](https://img.shields.io/badge/UI-Russian_%7C_English-f2bd3d?style=for-the-badge)](#features)
 </div>
 
 ## Live Demo
 
-**Play online:** [assigniter.github.io/nihon-drop](https://assigniter.github.io/nihon-drop/)
+**Play online:** [phaethonoff.github.io/nihon-drop](https://phaethonoff.github.io/nihon-drop/)
 
 No installation, registration, or backend is required.
 
@@ -46,7 +46,7 @@ Choose all of Japan or focus on one **chihō (地方)**. A correct first guess i
 
 ## How To Play
 
-1. Open the [live demo](https://assigniter.github.io/nihon-drop/).
+1. Open the [live demo](https://phaethonoff.github.io/nihon-drop/).
 2. Select all of Japan or a chihō.
 3. Read the prefecture name shown beside the map.
 4. Click its location on the map.
@@ -57,7 +57,7 @@ Choose all of Japan or focus on one **chihō (地方)**. A correct first guess i
 Clone the repository and serve the directory with any static web server:
 
 ```bash
-git clone https://github.com/ASSIGNITER/nihon-drop.git
+git clone https://github.com/Phaethonoff/nihon-drop.git
 cd nihon-drop
 python -m http.server 8000
 ```
@@ -102,4 +102,4 @@ The labeled reference map is included as an optional learning aid and remains cr
 
 ## Author
 
-Created by [ASSIGNITER](https://github.com/ASSIGNITER).
+Created by [Phaethonoff](https://github.com/Phaethonoff).
