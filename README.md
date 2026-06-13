@@ -20,6 +20,8 @@ No installation, registration, or backend is required.
 
 NIHON DROP is a geography practice game inspired by map quizzes. The game gives you the name of a Japanese prefecture, and you must find its real shape on an interactive map.
 
+> **Current language support:** the training game is currently available in two languages: Russian and English.
+
 Choose all of Japan or focus on one **chihō (地方)**. A correct first guess is marked green, a correct answer after mistakes is marked yellow, and after five failed attempts the answer is revealed.
 
 ## Screenshots
